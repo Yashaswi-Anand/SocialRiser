@@ -56,7 +56,7 @@ const Header = () => {
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
-                <img src="/images/logo/app_logo_removebg.png" height={10} width={80}/>
+                <img src="/images/logo/app_logo_removebg.png" height={10} width={80} alt="logo"/>
                 {/* <Image
                   src="/images/logo/app_logo_removebg.png"
                   alt="logo"
