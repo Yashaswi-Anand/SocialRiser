@@ -72,3 +72,11 @@ If you like the template, please star this repository to inspire the team to cre
 
 **29 Jan 2025**
 - Upgraded to Next.js 15
+
+
+**Step to upload on hostinger** 
+1. npm run build
+2. zip the out folder
+3. upload this zip file on hostinger
+4. all file move from out folder 
+5. BOOM: Ready to check website
