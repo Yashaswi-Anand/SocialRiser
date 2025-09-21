@@ -32,14 +32,14 @@ const menuData: Menu[] = [
     submenu: [
       {
         id: 41,
-        title: "About Page",
-        path: "/about",
+        title: "Influencer Marketing",
+        path: "/influencer-marketing",
         newTab: false,
       },
       {
         id: 42,
-        title: "Contact Page",
-        path: "/contact",
+        title: "Talent Management",
+        path: "/talent-management",
         newTab: false,
       },
       // {
@@ -51,7 +51,7 @@ const menuData: Menu[] = [
       // {
       //   id: 44,
       //   title: "Blog Sidebar Page",
-      //   path: "/blog-sidebar",
+      //   path: "/talent-management",
       //   newTab: false,
       // },
       // {
