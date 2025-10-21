@@ -21,19 +21,19 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-white shadow-md sticky top-0 z-50">
+        <header className="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 mx-4 mt-4 rounded-2xl animate-fadeInDown">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Left side - Logo and Title */}
                     <div className="flex items-center space-x-3">
                         <div className="flex-shrink-0">
                             {/* Logo placeholder - you can replace with actual logo */}
-                            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <div className="w-10 h-10 bg-gradient-to-r from-[#1cb299] to-[#224c94] rounded-lg flex items-center justify-center animate-pulse-custom hover-glow transition-all duration-300">
                                 <span className="text-white font-bold text-lg">SR</span>
                             </div>
                         </div>
                         <div>
-                            <h1 className="text-xl font-bold text-gray-900">Social Riser</h1>
+                            <h1 className="text-xl font-bold gradient-text">Social Riser</h1>
                             <p className="text-sm text-gray-600">Your Growth Our Success</p>
                         </div>
                     </div>
@@ -42,16 +42,18 @@ const Header = () => {
                     <nav className="hidden md:flex items-center space-x-8">
                         <Link
                             href="/"
-                            className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                            className="text-gray-700 hover:text-[#1cb299] transition-all duration-300 hover:scale-110 relative group"
                         >
                             Home
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#1cb299] transition-all duration-300 group-hover:w-full"></span>
                         </Link>
 
                         <Link
                             href="/about"
-                            className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                            className="text-gray-700 hover:text-[#1cb299] transition-all duration-300 hover:scale-110 relative group"
                         >
                             About
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#1cb299] transition-all duration-300 group-hover:w-full"></span>
                         </Link>
 
                         {/* Services Dropdown */}
@@ -60,7 +62,7 @@ const Header = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <button className="text-gray-700 hover:text-blue-600 transition-colors duration-200 flex items-center">
+                            <button className="text-gray-700 hover:text-[#1cb299] transition-all duration-300 hover:scale-110 relative group flex items-center">
                                 Services
                                 <svg
                                     className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
@@ -78,13 +80,13 @@ const Header = () => {
                                     <div className="py-2">
                                         <Link
                                             href="/services/influencer-marketing"
-                                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                                            className="block px-4 py-2 text-gray-700 hover:bg-[#1cb299]/10 hover:text-[#1cb299] transition-colors duration-200"
                                         >
                                             Influencer Marketing
                                         </Link>
                                         <Link
                                             href="/services/talent-management"
-                                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                                            className="block px-4 py-2 text-gray-700 hover:bg-[#1cb299]/10 hover:text-[#1cb299] transition-colors duration-200"
                                         >
                                             Talent Management
                                         </Link>
@@ -95,7 +97,7 @@ const Header = () => {
 
                         <Link
                             href="/contact"
-                            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
+                            className="bg-gradient-to-r from-[#1cb299] to-[#224c94] text-white font-bold text-lg px-4 py-1 rounded-full hover:from-[#224c94] hover:to-[#1cb299] transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg border-2 border-white/20"
                         >
                             Collaborate
                         </Link>
@@ -103,7 +105,7 @@ const Header = () => {
 
                     {/* Mobile menu button */}
                     <div className="md:hidden">
-                        <button className="text-gray-700 hover:text-blue-600">
+                        <button className="text-gray-700 hover:text-[#1cb299]">
                             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
