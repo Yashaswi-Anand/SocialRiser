@@ -31,7 +31,7 @@ export default function TalentManagement() {
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
               We work closely with influencers to build their personal brand, refine their content strategy, 
               and connect them with the right opportunities. From negotiation and brand partnerships to audience 
-              growth and reputation management, our team provides end-to-end support, ensuring our talents don't 
+              growth and reputation management, our team provides end-to-end support, ensuring our talents don&apos;t 
               just grow — they thrive.
             </p>
 
@@ -110,11 +110,11 @@ export default function TalentManagement() {
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Our talent management goes beyond short-term deals. We focus on long-term career building, 
               helping creators evolve from content makers to influential personalities with sustainable revenue streams. 
-              Whether you're a budding creator or an established influencer, we bring strategy, mentorship, 
+              Whether you&apos;re a budding creator or an established influencer, we bring strategy, mentorship, 
               and industry expertise to help you rise above the noise.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              With Social Riser Talent Management, you're not just a creator — you're a brand in the making.
+              With Social Riser Talent Management, you&apos;re not just a creator — you&apos;re a brand in the making.
             </p>
           </div>
 

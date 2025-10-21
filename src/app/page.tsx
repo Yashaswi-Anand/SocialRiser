@@ -21,12 +21,12 @@ export default function Home() {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted:', formData);
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    alert('Thank you for your message! We&apos;ll get back to you soon.');
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
   const brands = [
-    'Nike', 'Adidas', 'Apple', 'Samsung', 'Coca-Cola', 'McDonald\'s',
+    'Nike', 'Adidas', 'Apple', 'Samsung', 'Coca-Cola', 'McDonald&apos;s',
     'Google', 'Amazon', 'Netflix', 'Spotify', 'Tesla', 'Microsoft'
   ];
 

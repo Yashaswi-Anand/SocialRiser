@@ -104,7 +104,7 @@ export default function Services() {
               </h2>
               <h3 className="text-xl font-semibold text-green-600 mb-4">For Brands</h3>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Traditional advertising is losing its charm in today's digital-first world. Consumers now 
+                Traditional advertising is losing its charm in today&apos;s digital-first world. Consumers now 
                 demand authentic connections and real experiences. Social Riser bridges the gap between 
                 brands and influencers, ensuring your message reaches the right audience through voices 
                 they trust and relate to.

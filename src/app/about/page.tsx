@@ -42,7 +42,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="animate-fadeInUp">
             <p className="text-xl text-gray-700 leading-relaxed mb-12 text-center max-w-4xl mx-auto">
-              In today's fast-paced digital era, social media has become the heartbeat of marketing,
+              In today&apos;s fast-paced digital era, social media has become the heartbeat of marketing,
               entertainment, and storytelling. Every day, countless influencers and creators are rising
               with unique ideas, creativity, and passion. Some are striving for name and fame, while
               others are looking to turn their passion into a sustainable career.
@@ -51,7 +51,7 @@ export default function About() {
 
           <div className="animate-fadeInUp stagger-2">
             <p className="text-xl text-gray-700 leading-relaxed mb-12 text-center max-w-4xl mx-auto">
-              But in this highly competitive space, growth isn't just about creativity — it's about
+              But in this highly competitive space, growth isn&apos;t just about creativity — it&apos;s about
               opportunity, strategy, and the right connections. This is where <span className="gradient-text font-bold text-2xl">Social Riser</span> comes in.
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function About() {
           <div className="animate-fadeInUp stagger-4">
             <p className="text-xl text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
               At Social Riser, we believe that when the right creator and right brand come together,
-              it's more than just a campaign — <span className="gradient-text font-semibold">it's the beginning of a movement.</span>
+              it&apos;s more than just a campaign — <span className="gradient-text font-semibold">it&apos;s the beginning of a movement.</span>
             </p>
           </div>
         </div>
@@ -165,8 +165,8 @@ export default function About() {
           </div>
           <div className="animate-fadeInUp stagger-2">
             <p className="text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Whether you're a creator looking to grow or a brand seeking authentic partnerships,
-              we're here to help you rise to new heights.
+              Whether you&apos;re a creator looking to grow or a brand seeking authentic partnerships,
+              we&apos;re here to help you rise to new heights.
             </p>
           </div>
           <div className="animate-fadeInUp stagger-3 flex flex-col sm:flex-row gap-6 justify-center items-center">

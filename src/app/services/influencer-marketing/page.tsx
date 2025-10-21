@@ -13,7 +13,7 @@ export default function InfluencerMarketing() {
             For Brands
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform your brand's reach through authentic connections and trusted voices 
+            Transform your brand&apos;s reach through authentic connections and trusted voices 
             that resonate with your target audience.
           </p>
         </div>
@@ -25,7 +25,7 @@ export default function InfluencerMarketing() {
           <div className="bg-gray-50 p-8 rounded-2xl mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">The Challenge</h2>
             <p className="text-lg text-gray-700 leading-relaxed text-center">
-              Traditional advertising is losing its charm in today's digital-first world. 
+              Traditional advertising is losing its charm in today&apos;s digital-first world. 
               Consumers now demand authentic connections and real experiences.
             </p>
           </div>
@@ -221,7 +221,7 @@ export default function InfluencerMarketing() {
             Ready to Transform Your Marketing?
           </h2>
           <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-            Let's create authentic campaigns that connect your brand with the right audience 
+            Let&apos;s create authentic campaigns that connect your brand with the right audience 
             through trusted influencer partnerships.
           </p>
           <div className="space-x-4">

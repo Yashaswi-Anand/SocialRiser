@@ -62,7 +62,7 @@ ${formData.description}
             Contact Us
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to collaborate? Get in touch with us and let's create something amazing together.
+            Ready to collaborate? Get in touch with us and let&apos;s create something amazing together.
           </p>
         </div>
       </section>
@@ -72,9 +72,9 @@ ${formData.description}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-8 md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Let's Start a Conversation</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Let&apos;s Start a Conversation</h2>
               <p className="text-gray-600">
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
               </p>
             </div>
 
@@ -202,7 +202,7 @@ ${formData.description}
               </svg>
               <span className="text-xl font-semibold text-gray-900">Email Us</span>
             </div>
-            <p className="text-gray-600 mb-2">Send us a message and we'll respond within 24 hours</p>
+            <p className="text-gray-600 mb-2">Send us a message and we&apos;ll respond within 24 hours</p>
             <a 
               href="mailto:contact@socialriser.com" 
               className="text-blue-600 hover:text-blue-700 font-semibold text-lg"

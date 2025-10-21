@@ -21,8 +21,8 @@ const Header = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50 p-4">
-            <header className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl animate-fadeInDown max-w-7xl mx-auto">
+        <div className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent">
+            <header className="bg-white/95 backdrop-blur-lg shadow-xl rounded-2xl animate-fadeInDown max-w-7xl mx-auto border border-white/20">
                 <div className="px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         {/* Left side - Logo and Title */}
