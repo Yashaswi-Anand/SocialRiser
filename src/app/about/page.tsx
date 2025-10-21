@@ -24,12 +24,6 @@ export default function About() {
             </p>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-custom">
-            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
         </div>
       </section>
 
@@ -65,9 +59,9 @@ export default function About() {
               </p>
 
               <blockquote className="text-3xl md:text-4xl font-bold gradient-text text-center italic relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-[#1cb299]/20">"</div>
+                <div className="absolute -top-4 -left-4 text-6xl text-[#1cb299]/20">&ldquo;</div>
                 Empowering creators to rise, connect, and thrive while helping brands grow through authentic storytelling.
-                <div className="absolute -bottom-8 -right-4 text-6xl text-[#224c94]/20">"</div>
+                <div className="absolute -bottom-8 -right-4 text-6xl text-[#224c94]/20">&rdquo;</div>
               </blockquote>
             </div>
           </div>

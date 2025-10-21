@@ -79,12 +79,6 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-custom">
-            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
         </div>
       </section>
 
@@ -198,7 +192,7 @@ export default function Home() {
           <div className="text-center mb-16 animate-fadeInUp">
             <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-8">Get In Touch</h2>
             <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to start your next campaign? Let's discuss how we can help you
+              Ready to start your next campaign? Let&apos;s discuss how we can help you
               connect with the right influencers and achieve your goals.
             </p>
           </div>

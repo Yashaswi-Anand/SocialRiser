@@ -121,7 +121,7 @@ export default function TalentManagement() {
           {/* Quote Section */}
           <div className="text-center mb-12">
             <blockquote className="text-3xl font-bold text-purple-600 mb-4">
-              "We manage the business, so you can focus on creating magic."
+              "              &ldquo;We manage the business, so you can focus on creating magic.&rdquo;"
             </blockquote>
           </div>
         </div>
