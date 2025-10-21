@@ -25,15 +25,15 @@ export default function Home() {
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
-  const brands = [
-    'Nike', 'Adidas', 'Apple', 'Samsung', 'Coca-Cola', 'McDonald&apos;s',
-    'Google', 'Amazon', 'Netflix', 'Spotify', 'Tesla', 'Microsoft'
-  ];
+  // const brands = [
+  //   'Nike', 'Adidas', 'Apple', 'Samsung', 'Coca-Cola', 'McDonald&apos;s',
+  //   'Google', 'Amazon', 'Netflix', 'Spotify', 'Tesla', 'Microsoft'
+  // ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center px-4 overflow-hidden">
+      <section className="h-screen flex items-center justify-center px-4 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1cb299]/10 via-[#224c94]/10 to-[#1cb299]/5 animate-gradient"></div>
 
