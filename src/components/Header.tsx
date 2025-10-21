@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const Header = () => {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleMouseEnter = () => {
@@ -106,14 +107,72 @@ const Header = () => {
 
                         {/* Mobile menu button */}
                         <div className="md:hidden">
-                            <button className="text-gray-700 hover:text-[#1cb299]">
+                            <button 
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className="text-gray-700 hover:text-[#1cb299] transition-colors duration-200"
+                            >
                                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    {isMobileMenuOpen ? (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    ) : (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    )}
                                 </svg>
                             </button>
                         </div>
                     </div>
                 </div>
+
+                {/* Mobile Menu */}
+                {isMobileMenuOpen && (
+                    <div className="md:hidden mt-2 bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 animate-fadeInDown">
+                        <div className="px-4 py-6 space-y-4">
+                            <Link
+                                href="/"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block text-gray-700 hover:text-[#1cb299] transition-colors duration-200 text-lg font-medium"
+                            >
+                                Home
+                            </Link>
+                            
+                            <Link
+                                href="/about"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block text-gray-700 hover:text-[#1cb299] transition-colors duration-200 text-lg font-medium"
+                            >
+                                About
+                            </Link>
+                            
+                            <div className="space-y-2">
+                                <div className="text-gray-700 font-medium text-lg">Services</div>
+                                <div className="pl-4 space-y-2">
+                                    <Link
+                                        href="/services/influencer-marketing"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="block text-gray-600 hover:text-[#1cb299] transition-colors duration-200"
+                                    >
+                                        Influencer Marketing
+                                    </Link>
+                                    <Link
+                                        href="/services/talent-management"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="block text-gray-600 hover:text-[#1cb299] transition-colors duration-200"
+                                    >
+                                        Talent Management
+                                    </Link>
+                                </div>
+                            </div>
+                            
+                            <Link
+                                href="/contact"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block bg-gradient-to-r from-[#1cb299] to-[#224c94] text-white text-center py-3 px-6 rounded-full font-bold hover:from-[#224c94] hover:to-[#1cb299] transition-all duration-300"
+                            >
+                                Collaborate
+                            </Link>
+                        </div>
+                    </div>
+                )}
             </header>
         </div>
     );
