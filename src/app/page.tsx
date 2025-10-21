@@ -26,20 +26,20 @@ export default function Home() {
   };
 
   const brands = [
-    'Nike', 'Adidas', 'Apple', 'Samsung', 'Coca-Cola', 'McDonald\'s', 
+    'Nike', 'Adidas', 'Apple', 'Samsung', 'Coca-Cola', 'McDonald\'s',
     'Google', 'Amazon', 'Netflix', 'Spotify', 'Tesla', 'Microsoft'
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4">
+      <section className="bg-gradient-to-br from-blue-50 to-purple-50 h-screen flex items-center justify-center px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Crafting the Future of Influence
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Connecting brands with creators to design unforgettable campaigns that inspire, 
+            Connecting brands with creators to design unforgettable campaigns that inspire,
             engage, and transform digital influence into real-world impact.
           </p>
           <div className="mt-10">
@@ -82,11 +82,11 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">What We Do</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We collaborate with influencers and authentic brands to create meaningful 
+              We collaborate with influencers and authentic brands to create meaningful
               partnerships that drive real results and build lasting relationships.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
               <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
@@ -96,7 +96,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Influencer Matching</h3>
               <p className="text-gray-600">
-                We connect brands with the perfect influencers who align with their values, 
+                We connect brands with the perfect influencers who align with their values,
                 audience, and campaign objectives for authentic partnerships.
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Campaign Strategy</h3>
               <p className="text-gray-600">
-                Our expert team develops comprehensive campaign strategies that maximize 
+                Our expert team develops comprehensive campaign strategies that maximize
                 reach, engagement, and conversion rates across all social platforms.
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Performance Analytics</h3>
               <p className="text-gray-600">
-                Track and measure campaign success with detailed analytics and insights 
+                Track and measure campaign success with detailed analytics and insights
                 that help optimize future collaborations and maximize ROI.
               </p>
             </div>
@@ -136,7 +136,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             <p className="text-xl text-gray-600">
-              Ready to start your next campaign? Let's discuss how we can help you 
+              Ready to start your next campaign? Let's discuss how we can help you
               connect with the right influencers and achieve your goals.
             </p>
           </div>
