@@ -79,7 +79,7 @@ export default function Services() {
               
               <div className="bg-white p-4 rounded-lg mb-6">
                 <p className="text-gray-600 italic text-center">
-                  "                  &ldquo;We manage the business, so you can focus on creating magic.&rdquo;"
+                  &ldquo;We manage the business, so you can focus on creating magic.&rdquo;
                 </p>
               </div>
               
