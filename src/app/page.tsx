@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center px-4 overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center px-4 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1cb299]/10 via-[#224c94]/10 to-[#1cb299]/5 animate-gradient"></div>
 
@@ -45,10 +45,10 @@ export default function Home() {
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <div className="animate-fadeInUp">
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">🚀
               <span className="gradient-text animate-shimmer">Crafting the Future</span>
               <br />
-              <span className="text-gray-800 animate-fadeInUp stagger-2">of Influencer</span>
+              <span className="text-green-800 animate-fadeInUp stagger-2">of Influencer</span>
             </h1>
           </div>
 
@@ -151,6 +151,62 @@ export default function Home() {
                     that help optimize future collaborations and maximize ROI.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Vision Section */}
+      <section className="py-24 bg-gradient-to-br from-[#1cb299]/5 via-white to-[#224c94]/5 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-10 left-10 w-40 h-40 bg-[#1cb299]/10 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#224c94]/10 rounded-full opacity-20 animate-float stagger-3"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#1cb299]/5 to-[#224c94]/5 rounded-full opacity-30 animate-pulse-custom"></div>
+
+        <div className="max-w-5xl mx-auto px-4 relative z-10">
+          <div className="text-center animate-fadeInUp">
+            <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-12">Our Vision</h2>
+
+            <div className="glass p-12 rounded-3xl shadow-2xl backdrop-blur-lg border border-white/20 animate-fadeInUp stagger-2">
+              <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed font-medium">
+                To bridge the gap between authentic tech influencers and innovative brands through
+                <span className="gradient-text font-bold"> trust</span>,
+                <span className="gradient-text font-bold"> transparency</span>, and
+                <span className="gradient-text font-bold"> technology</span>.
+              </p>
+            </div>
+
+            <div className="mt-12 grid md:grid-cols-3 gap-8 animate-fadeInUp stagger-3">
+              <div className="group">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#1cb299] to-[#224c94] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#1cb299] transition-colors duration-300">Trust</h3>
+                <p className="text-gray-600">Building reliable partnerships</p>
+              </div>
+
+              <div className="group">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#224c94] to-[#1cb299] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#224c94] transition-colors duration-300">Transparency</h3>
+                <p className="text-gray-600">Clear and honest communication</p>
+              </div>
+
+              <div className="group">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#1cb299] to-[#224c94] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#1cb299] transition-colors duration-300">Technology</h3>
+                <p className="text-gray-600">Innovative solutions for growth</p>
               </div>
             </div>
           </div>

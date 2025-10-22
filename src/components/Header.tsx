@@ -22,10 +22,10 @@ const Header = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent">
-            <header className="bg-white/95 backdrop-blur-lg shadow-xl rounded-2xl animate-fadeInDown max-w-7xl mx-auto border border-white/20">
-                <div className="px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
+        <div className="fixed top-0 left-0 right-0 z-50 p-2 bg-gradient-to-br from-[#1cb299]/10 via-[#224c94]/10 to-[#1cb299]/5">
+            <header className="bg-white/95 backdrop-blur-lg shadow-xl rounded-2xl animate-fadeInDown max-w-7xl mx-auto border border-white/20 bg-gradient-to-br from-[#1cb299]/10 via-[#224c94]/10 to-[#1cb299]/5">
+                <div className="px-4 sm:px-6 lg:px-8 ">
+                    <div className="flex justify-between items-center h-16 ">
                         {/* Left side - Logo and Title */}
                         <div className="flex items-center space-x-3">
                             <div className="flex-shrink-0">
@@ -107,7 +107,7 @@ const Header = () => {
 
                         {/* Mobile menu button */}
                         <div className="md:hidden">
-                            <button 
+                            <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                 className="text-gray-700 hover:text-[#1cb299] transition-colors duration-200"
                             >
@@ -134,7 +134,7 @@ const Header = () => {
                             >
                                 Home
                             </Link>
-                            
+
                             <Link
                                 href="/about"
                                 onClick={() => setIsMobileMenuOpen(false)}
@@ -142,7 +142,7 @@ const Header = () => {
                             >
                                 About
                             </Link>
-                            
+
                             <div className="space-y-2">
                                 <div className="text-gray-700 font-medium text-lg">Services</div>
                                 <div className="pl-4 space-y-2">
@@ -162,7 +162,7 @@ const Header = () => {
                                     </Link>
                                 </div>
                             </div>
-                            
+
                             <Link
                                 href="/contact"
                                 onClick={() => setIsMobileMenuOpen(false)}

@@ -2,20 +2,62 @@ import Link from 'next/link';
 
 export default function TalentManagement() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-hidden">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-50 to-blue-50 py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Talent Management
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-purple-600 mb-6">
-            Nurturing the Stars of Tomorrow
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At Social Riser, we believe that true talent deserves more than just recognition —
-            it deserves direction, opportunity, and growth.
-          </p>
+      <section className="relative h-screen flex items-center justify-center px-4 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1cb299]/10 via-[#224c94]/10 to-[#1cb299]/5 animate-gradient"></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-[#224c94]/20 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-[#1cb299]/20 rounded-full opacity-30 animate-float stagger-2"></div>
+        <div className="absolute bottom-40 left-20 w-20 h-20 bg-[#224c94]/15 rounded-full opacity-25 animate-float stagger-4"></div>
+        <div className="absolute bottom-20 right-10 w-28 h-28 bg-[#1cb299]/15 rounded-full opacity-20 animate-float stagger-6"></div>
+        
+        {/* Star Particles */}
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-[#224c94] rounded-full animate-bounce-custom opacity-60"></div>
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-[#1cb299] rounded-full animate-bounce-custom stagger-3 opacity-70"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-[#224c94] rounded-full animate-bounce-custom stagger-5 opacity-50"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <div className="animate-fadeInUp">
+            <h1 className="text-6xl md:text-8xl font-bold gradient-text mb-8 animate-shimmer">
+              Talent Management
+            </h1>
+          </div>
+          <div className="animate-fadeInUp stagger-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#224c94] mb-8">
+              ⭐ Nurturing the Stars of Tomorrow ⭐
+            </h2>
+          </div>
+          <div className="animate-fadeInUp stagger-3">
+            <p className="text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed mb-12">
+              At Social Riser, we believe that true talent deserves more than just recognition —
+              it deserves direction, opportunity, and growth.
+            </p>
+          </div>
+          
+          {/* Animated Achievement Stats */}
+          <div className="grid md:grid-cols-3 gap-8 mt-16 animate-fadeInUp stagger-4">
+            <div className="group">
+              <div className="glass p-6 rounded-2xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                <div className="text-4xl font-bold gradient-text mb-2 animate-pulse-custom">200+</div>
+                <div className="text-gray-600 group-hover:text-[#224c94] transition-colors duration-300">Talents Managed</div>
+              </div>
+            </div>
+            <div className="group">
+              <div className="glass p-6 rounded-2xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                <div className="text-4xl font-bold gradient-text mb-2 animate-pulse-custom">5M+</div>
+                <div className="text-gray-600 group-hover:text-[#1cb299] transition-colors duration-300">Combined Followers</div>
+              </div>
+            </div>
+            <div className="group">
+              <div className="glass p-6 rounded-2xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                <div className="text-4xl font-bold gradient-text mb-2 animate-pulse-custom">98%</div>
+                <div className="text-gray-600 group-hover:text-[#224c94] transition-colors duration-300">Growth Rate</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
