@@ -6,6 +6,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    userType: '',
     instagram: '',
     facebook: '',
     description: ''
@@ -25,6 +26,7 @@ export default function Contact() {
     const emailBody = `
 Name: ${formData.name}
 Email: ${formData.email}
+User Type: ${formData.userType || 'Not specified'}
 Instagram: ${formData.instagram || 'Not provided'}
 Facebook: ${formData.facebook || 'Not provided'}
 
@@ -47,6 +49,7 @@ ${formData.description}
     setFormData({
       name: '',
       email: '',
+      userType: '',
       instagram: '',
       facebook: '',
       description: ''
@@ -111,6 +114,39 @@ ${formData.description}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   placeholder="your@email.com"
                 />
+              </div>
+
+              {/* User Type Radio Buttons */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-3">
+                  I am a *
+                </label>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <label className="flex items-center cursor-pointer">
+                    <input
+                      type="radio"
+                      name="userType"
+                      value="Brand"
+                      checked={formData.userType === 'Brand'}
+                      onChange={handleInputChange}
+                      className="w-4 h-4 text-[#1cb299] bg-gray-100 border-gray-300 focus:ring-[#1cb299] focus:ring-2"
+                      required
+                    />
+                    <span className="ml-2 text-gray-700 font-medium">Brand</span>
+                  </label>
+                  <label className="flex items-center cursor-pointer">
+                    <input
+                      type="radio"
+                      name="userType"
+                      value="Influencer/Creator"
+                      checked={formData.userType === 'Influencer/Creator'}
+                      onChange={handleInputChange}
+                      className="w-4 h-4 text-[#1cb299] bg-gray-100 border-gray-300 focus:ring-[#1cb299] focus:ring-2"
+                      required
+                    />
+                    <span className="ml-2 text-gray-700 font-medium">Influencer/Creator</span>
+                  </label>
+                </div>
               </div>
 
               {/* Social Media Links */}
