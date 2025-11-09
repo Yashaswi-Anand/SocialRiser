@@ -19,41 +19,48 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Create email body with form data
-    const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-User Type: ${formData.userType || 'Not specified'}
-Instagram: ${formData.instagram || 'Not provided'}
-YouTube: ${formData.youtube || 'Not provided'}
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-Description:
-${formData.description}
-    `.trim();
-
-    // Create mailto link
-    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
-    const body = encodeURIComponent(emailBody);
-    const mailtoLink = `mailto:contact@socialriser.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    alert('Thank you for your message! Your email client will open to send the message.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      userType: '',
-      instagram: '',
-      youtube: '',
-      description: ''
-    });
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          userType: '',
+          instagram: '',
+          youtube: '',
+          description: ''
+        });
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -276,17 +283,55 @@ ${formData.description}
                   </div>
                 </div>
 
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="animate-fadeInUp bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-500 rounded-2xl p-6 text-center">
+                    <div className="flex items-center justify-center mb-3">
+                      <svg className="w-12 h-12 text-green-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-green-700 mb-2">Message Sent Successfully! 🎉</h3>
+                    <p className="text-green-600">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="animate-fadeInUp bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-500 rounded-2xl p-6 text-center">
+                    <div className="flex items-center justify-center mb-3">
+                      <svg className="w-12 h-12 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-red-700 mb-2">Oops! Something went wrong</h3>
+                    <p className="text-red-600">Please try again or email us directly at contact@socialriser.com</p>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <div className="text-center pt-8 animate-fadeInUp stagger-5">
                   <button
                     type="submit"
-                    className="group bg-gradient-to-r from-[#1cb299] to-[#224c94] text-white px-12 py-5 rounded-full text-xl font-bold hover:from-[#224c94] hover:to-[#1cb299] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-pulse-custom relative overflow-hidden"
+                    disabled={isSubmitting}
+                    className="group bg-gradient-to-r from-[#1cb299] to-[#224c94] text-white px-12 py-5 rounded-full text-xl font-bold hover:from-[#224c94] hover:to-[#1cb299] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-pulse-custom relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     <span className="relative z-10 flex items-center justify-center">
-                      Send Message
-                      <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                          </svg>
+                        </>
+                      )}
                     </span>
                     <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                   </button>
