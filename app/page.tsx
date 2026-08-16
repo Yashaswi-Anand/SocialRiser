@@ -80,12 +80,12 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <p
+            {/* <p
               className="animate-fade-up mt-12 font-mono text-xs text-subtle"
               style={{ animationDelay: "380ms" }}
             >
               {stats.join(" · ")}
-            </p>
+            </p> */}
           </div>
         </section>
 
