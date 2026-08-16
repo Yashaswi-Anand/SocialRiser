@@ -40,6 +40,9 @@
   --orb-opacity: 0.18;
   --aura-strength: 7%;
   --accent-glow: 0.45;
+  /* Grain reads darker on white than it does light on black, so light needs less. */
+  --grain-opacity: 0.05;
+  --sheen: rgb(16 16 24 / 0.02);
 
   --shadow-card: 0 1px 2px rgb(16 16 24 / 0.06), 0 12px 28px -14px rgb(16 16 24 / 0.16);
   --shadow-lift: 0 2px 6px rgb(16 16 24 / 0.08), 0 22px 44px -18px rgb(109 64 255 / 0.3);
@@ -62,6 +65,8 @@
   --orb-opacity: 0.55;
   --aura-strength: 18%;
   --accent-glow: 1;
+  --grain-opacity: 0.075;
+  --sheen: rgb(255 255 255 / 0.025);
 
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
   --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 18px 40px -16px rgb(139 92 246 / 0.35);
@@ -83,6 +88,8 @@
     --orb-opacity: 0.55;
     --aura-strength: 18%;
     --accent-glow: 1;
+    --grain-opacity: 0.075;
+    --sheen: rgb(255 255 255 / 0.025);
     color-scheme: dark;
   }
 }
@@ -134,6 +141,16 @@
     will-change: transform;
   }
 
+  /*
+   * Film grain over the whole page, including cards, so flat fills get some
+   * tooth. Generated inline with feTurbulence — no image asset, ~400 bytes,
+   * desaturated so it reads as grain rather than colour speckle.
+   */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+  }
+
   /* Soft radial light source used behind headings and panels. */
   .aura {
     background-image: radial-gradient(
@@ -156,7 +173,10 @@
 
   /* ------------------------------------------------------------ surface */
   .card {
+    /* A faint top-down sheen over the fill, so surfaces read as material
+       rather than a flat rectangle of colour. */
     background-color: var(--surface);
+    background-image: linear-gradient(to bottom, var(--sheen), transparent 55%);
     border: 1px solid var(--line);
     box-shadow: var(--shadow-card);
     transition:
