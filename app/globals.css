@@ -33,10 +33,16 @@
   --subtle: #6f6f7a;
   --brand: #6d40ff;
 
-  --dot: #d6d6de;
-  --orb-opacity: 0.5;
-  --shadow-card: 0 1px 2px rgb(11 11 16 / 0.05), 0 8px 24px -12px rgb(11 11 16 / 0.12);
-  --shadow-lift: 0 2px 4px rgb(11 11 16 / 0.06), 0 18px 40px -16px rgb(109 64 255 / 0.28);
+  --dot: #dcdce4;
+
+  /* A light canvas amplifies colour instead of absorbing it, so the ambient
+     layers are dialled right down here — far lower than the dark values. */
+  --orb-opacity: 0.18;
+  --aura-strength: 7%;
+  --accent-glow: 0.45;
+
+  --shadow-card: 0 1px 2px rgb(16 16 24 / 0.06), 0 12px 28px -14px rgb(16 16 24 / 0.16);
+  --shadow-lift: 0 2px 6px rgb(16 16 24 / 0.08), 0 22px 44px -18px rgb(109 64 255 / 0.3);
   color-scheme: light;
 }
 
@@ -54,6 +60,9 @@
 
   --dot: #22222b;
   --orb-opacity: 0.55;
+  --aura-strength: 18%;
+  --accent-glow: 1;
+
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
   --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 18px 40px -16px rgb(139 92 246 / 0.35);
   color-scheme: dark;
@@ -71,6 +80,9 @@
     --subtle: #85858f;
     --brand: #8b5cf6;
     --dot: #22222b;
+    --orb-opacity: 0.55;
+    --aura-strength: 18%;
+    --accent-glow: 1;
     color-scheme: dark;
   }
 }
@@ -126,9 +138,20 @@
   .aura {
     background-image: radial-gradient(
       60% 60% at 50% 0%,
-      color-mix(in oklab, var(--brand) 18%, transparent) 0%,
+      color-mix(in oklab, var(--brand) var(--aura-strength), transparent) 0%,
       transparent 70%
     );
+  }
+
+  /* Per-product colour wash on a card. Scaled by theme so it stays a hint
+     on light and a glow on dark. */
+  .card-glow {
+    opacity: calc(var(--accent-glow) * 0.6);
+    transition: opacity 0.5s ease;
+  }
+
+  .group:hover .card-glow {
+    opacity: var(--accent-glow);
   }
 
   /* ------------------------------------------------------------ surface */

@@ -53,7 +53,8 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-screen antialiased">
+      {/* `relative` anchors the absolutely-positioned Background to the document top. */}
+      <body className="relative min-h-screen antialiased">
         <Background />
         {children}
       </body>

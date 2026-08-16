@@ -21,7 +21,7 @@ export function ProductCard({ product }: { product: Product }) {
       {/* Accent glow, brightens on hover. */}
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br opacity-60 blur-2xl transition-opacity duration-500 group-hover:opacity-100 ${product.accent}`}
+        className={`card-glow pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br blur-2xl ${product.accent}`}
       />
 
       <div className="relative flex items-start justify-between gap-3">
@@ -58,7 +58,9 @@ export function ProductCard({ product }: { product: Product }) {
         ))}
       </ul>
 
-      <div className="relative mt-6 flex-1 items-end pt-2">
+      {/* mt-auto pins the CTA to the bottom so it lines up across cards of
+          differing height, instead of floating mid-card. */}
+      <div className="relative mt-auto pt-7">
         {product.url ? (
           <a
             href={product.url}
