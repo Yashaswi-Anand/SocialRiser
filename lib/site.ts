@@ -88,7 +88,7 @@ export const products: Product[] = [
   },
   {
     id: "next",
-    name: "Next product",
+    name: "Next Product",
     tagline:
       "Something new is in early planning. Get in touch and you'll hear about it first.",
     status: "planned",
@@ -124,11 +124,13 @@ export const roadmap: RoadmapItem[] = [
     title: "One SocialRiser account",
     detail: "A single login that works across every product, instead of one per app.",
     status: "planned",
+    hidden: true,
   },
   {
-    title: "Third product",
+    title: "Next Product",
     detail: "Still being scoped. It won't be announced until it's real.",
     status: "planned",
+    // hidden: true,
   },
 ];
 
