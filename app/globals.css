@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by data-theme on <html>, set before paint by the
+   inline script in app/layout.tsx. Enables `dark:` variants in JSX. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* `inline` keeps the utilities pointing at the raw vars below, so a theme
+   swap re-colours everything without regenerating any CSS. */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-brand: var(--brand);
+
+  --font-sans: ui-sans-serif, "Segoe UI Variable Display", "Segoe UI",
+    -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas,
+    monospace;
+}
+
+/* ---------------------------------------------------------------- Light */
+:root {
+  --canvas: #fbfbfd;
+  --surface: #ffffff;
+  --surface-2: #f3f3f6;
+  --line: #e5e5ea;
+  --ink: #0b0b10;
+  --muted: #52525c;
+  --subtle: #6f6f7a;
+  --brand: #6d40ff;
+
+  --dot: #d6d6de;
+  --orb-opacity: 0.5;
+  --shadow-card: 0 1px 2px rgb(11 11 16 / 0.05), 0 8px 24px -12px rgb(11 11 16 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(11 11 16 / 0.06), 0 18px 40px -16px rgb(109 64 255 / 0.28);
+  color-scheme: light;
+}
+
+/* ----------------------------------------------------------------- Dark */
+:root[data-theme="dark"] {
+  --canvas: #08080b;
+  --surface: #101014;
+  --surface-2: #17171d;
+  --line: #26262e;
+  --ink: #f4f4f5;
+  --muted: #a1a1ad;
+  /* Sits on --surface as well as --canvas, so it's tuned to clear AA on the lighter of the two. */
+  --subtle: #85858f;
+  --brand: #8b5cf6;
+
+  --dot: #22222b;
+  --orb-opacity: 0.55;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 18px 40px -16px rgb(139 92 246 / 0.35);
+  color-scheme: dark;
+}
+
+/* Fallback for the no-JS case, where data-theme is never set. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --canvas: #08080b;
+    --surface: #101014;
+    --surface-2: #17171d;
+    --line: #26262e;
+    --ink: #f4f4f5;
+    --muted: #a1a1ad;
+    --subtle: #85858f;
+    --brand: #8b5cf6;
+    --dot: #22222b;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    /* Softens the flip between themes without animating every child. */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Keep anchored sections clear of the sticky header. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--brand) 30%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* ------------------------------------------------ ambient background */
+  .dot-grid {
+    background-image: radial-gradient(circle at center, var(--dot) 1px, transparent 1px);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 55% at 50% 0%, #000 0%, transparent 78%);
+    mask-image: radial-gradient(ellipse 90% 55% at 50% 0%, #000 0%, transparent 78%);
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: var(--orb-opacity);
+    will-change: transform;
+  }
+
+  /* Soft radial light source used behind headings and panels. */
+  .aura {
+    background-image: radial-gradient(
+      60% 60% at 50% 0%,
+      color-mix(in oklab, var(--brand) 18%, transparent) 0%,
+      transparent 70%
+    );
+  }
+
+  /* ------------------------------------------------------------ surface */
+  .card {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-card);
+    transition:
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--brand) 45%, var(--line));
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* Gradient hairline border, used on the contact panel. */
+  .gradient-ring {
+    position: relative;
+    background-clip: padding-box;
+  }
+
+  .gradient-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--brand) 60%, transparent),
+      transparent 45%,
+      color-mix(in oklab, #38bdf8 45%, transparent)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* ------------------------------------------------------------ animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -28px, 0) scale(1.06);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Reveal sections as they scroll into view, where the browser supports it.
+   Everything stays visible by default, so unsupported browsers lose nothing. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 22%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-fade-up {
+    opacity: 1;
+  }
+}
