@@ -50,9 +50,9 @@ export const statusLabels: Record<ProductStatus, string> = {
 };
 
 /* ------------------------------------------------------------------ *
- * TODO: The taglines and highlights below are placeholders written
- * from a rough description. Replace them with what these products
- * actually do before you go live.
+ * TODO: Multiverse's tagline and highlights are still placeholders,
+ * written from a rough description. Replace them with what it actually
+ * does. Investor's copy is taken from the live site.
  * ------------------------------------------------------------------ */
 
 export const products: Product[] = [
@@ -69,6 +69,20 @@ export const products: Product[] = [
       "Built for creators managing more than one identity",
     ],
     accent: "from-violet-500/25 to-fuchsia-500/10",
+  },
+  {
+    id: "investor",
+    name: "Investor",
+    url: "https://investor.socialriser.com",
+    tagline:
+      "Every Mainboard and SME IPO in India, tracked live — GMP, subscription, allotment and listing dates in one place.",
+    status: "live",
+    highlights: [
+      "Live GMP with daily history and estimated listing price",
+      "Subscription status across QIB, NII and Retail",
+      "Price band, lot size, issue size and minimum investment",
+    ],
+    accent: "from-emerald-500/25 to-sky-500/10",
   },
   {
     id: "ipo",
@@ -111,6 +125,12 @@ export const roadmap: RoadmapItem[] = [
   {
     title: "Multiverse — public launch",
     detail: "Live and open to everyone at multiverse.socialriser.com.",
+    status: "shipped",
+  },
+  {
+    title: "Investor — public launch",
+    detail:
+      "Live IPO tracking for India at investor.socialriser.com, covering both Mainboard and SME issues.",
     status: "shipped",
   },
   {
