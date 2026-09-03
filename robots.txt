@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://socialriser.com
+Sitemap: https://socialriser.com/sitemap.xml
